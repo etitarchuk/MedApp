@@ -163,6 +163,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -189,7 +190,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -231,9 +234,9 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MedApp.Core\MedApp.Core.csproj">
-      <Project>{f24ca5aa-4f0f-4d10-aca8-c1da95d85b73}</Project>
-      <Name>MedApp.Core</Name>
+    <ProjectReference Include="..\MedApp.DataLayer\MedApp.DataLayer.csproj">
+      <Project>{68813a10-2a94-455c-83f9-ac716e826dcd}</Project>
+      <Name>MedApp.DataLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
