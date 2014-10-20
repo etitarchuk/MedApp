@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedApp.DataLayer", "MedApp.DataLayer\MedApp.DataLayer.csproj", "{68813A10-2A94-455C-83F9-AC716E826DCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedApp.Core", "MedApp.Core\MedApp.Core.csproj", "{F24CA5AA-4F0F-4D10-ACA8-C1DA95D85B73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedApp.Web", "MedApp.Web\MedApp.Web.csproj", "{08587A8C-7AC4-411F-B8B1-C906AB0F5670}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68813A10-2A94-455C-83F9-AC716E826DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68813A10-2A94-455C-83F9-AC716E826DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68813A10-2A94-455C-83F9-AC716E826DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68813A10-2A94-455C-83F9-AC716E826DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F24CA5AA-4F0F-4D10-ACA8-C1DA95D85B73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F24CA5AA-4F0F-4D10-ACA8-C1DA95D85B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F24CA5AA-4F0F-4D10-ACA8-C1DA95D85B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F24CA5AA-4F0F-4D10-ACA8-C1DA95D85B73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08587A8C-7AC4-411F-B8B1-C906AB0F5670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08587A8C-7AC4-411F-B8B1-C906AB0F5670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08587A8C-7AC4-411F-B8B1-C906AB0F5670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08587A8C-7AC4-411F-B8B1-C906AB0F5670}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
