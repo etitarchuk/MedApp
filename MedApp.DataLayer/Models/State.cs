@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -8,20 +9,17 @@ using System.Threading.Tasks;
 
 namespace MedApp.DataLayer.Models
 {
-    public class User
+    public class State
     {
         [Key]
         [DatabaseGeneratedAttribute(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
         public int Id { get; private set; }
 
-        [StringLength(50, MinimumLength = 3)]
-        public string Username { get; set; }
+        [StringLength(20)]
+        public string StateName { get; set; }
+        [StringLength(5)]
+        public string Abbr { get; set; }
 
-        [StringLength(50, MinimumLength = 3)]
-        public string Password { get; set; }
-
-        public virtual Role  Role { get; set; }
-
-        public virtual ICollection<Practice> Practices { get; set; }
+        public ICollection<Address> Addresses { get; set; }
     }
 }

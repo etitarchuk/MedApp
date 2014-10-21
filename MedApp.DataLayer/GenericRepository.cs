@@ -76,7 +76,12 @@ namespace MedApp.DataLayer
         {
             this.dbSet.Attach(entityToUpdate);
             this.context.Entry(entityToUpdate).State = EntityState.Modified;
-        }        
+        }
+
+        public virtual void Save()
+        {
+            this.context.SaveChanges();
+        }
     }
 }
 
