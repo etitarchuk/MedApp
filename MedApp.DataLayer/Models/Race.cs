@@ -21,6 +21,9 @@ namespace MedApp.DataLayer.Models
         [StringLength(2)]
         public string Abbr { get; set; }
 
-        public virtual ICollection<Patient> Patients { get; set; }
+       
+        public virtual ICollection<Patient> RacePatients { get; set; }
+       
+        public virtual ICollection<Patient> Race2Patients { get; set; }
     }
 }

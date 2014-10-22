@@ -22,7 +22,6 @@ namespace MedApp.DataLayer.Models
         public decimal Weight { get; set; }
 
         public Patient Patient { get; set; }
-
         
     }
 }
