@@ -19,11 +19,15 @@ namespace MedApp.DataLayer.Models
         [StringLength(30)]
         public string Description { get; set; }
 
-        public bool IsCashCase { get; set; }
+        public bool? IsCashCase { get; set; }
 
-        public bool IsPrintPatientStatement { get; set; }
+        public bool? IsPrintPatientStatement { get; set; }
 
-        public DateTime GlobagCoverage { get; set; }
+        public DateTime? GlobagCoverage { get; set; }
+
+        public int? PatientId { get; set; }
+
+        public int? GuarantorId { get; set; }
 
         public Patient Guarantor { get; set; }
 

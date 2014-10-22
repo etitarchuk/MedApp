@@ -18,7 +18,7 @@ namespace MedApp.DataLayer.Models
         [StringLength(2)]
         public string Code { get; set; }
 
-        public bool InactiveCode { get; set; }
+        public bool? InactiveCode { get; set; }
 
         [StringLength(20)]
         public string Description { get; set; }
@@ -31,6 +31,9 @@ namespace MedApp.DataLayer.Models
 
         public User ModifiedBy { get; set; }
 
+        public int? ModifiedById { get; set; }
+
+        public int? CreatedById { get; set; }
         public virtual ICollection<Patient> Patients { get; set; }
     }
 }

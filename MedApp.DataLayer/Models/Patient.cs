@@ -17,7 +17,7 @@ namespace MedApp.DataLayer.Models
 
         [StringLength(8)]
         public string ChartNumber { get; set; }       
-        public bool Inactive { get; set; }
+        public bool? Inactive { get; set; }
 
         [StringLength(20)]
         public string LastName { get; set; }
@@ -31,13 +31,13 @@ namespace MedApp.DataLayer.Models
         [StringLength(25)]
         public string MiddleName { get; set; }
 
-        public DateTime BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
 
-        public decimal BirthWeight { get; set; }
+        public decimal? BirthWeight { get; set; }
 
-        public decimal SocialSecurity { get; set; }
+        public decimal? SocialSecurity { get; set; }
 
-        public DateTime DeathDate { get; set; }
+        public DateTime? DeathDate { get; set; }
 
         [StringLength(15)]
         public string PatientID2 { get; set; }
@@ -48,13 +48,13 @@ namespace MedApp.DataLayer.Models
         [StringLength(10)]
         public string HealthcareId { get; set; }
 
-        public bool SignatureOnFile { get; set; }
+        public bool? SignatureOnFile { get; set; }
 
-        public DateTime SignatureDate { get; set; }
+        public DateTime? SignatureDate { get; set; }
 
-        public bool IsSmoker { get; set; }
+        public bool? IsSmoker { get; set; }
 
-        public Sex Sex { get; set; }
+        public Sex? Sex { get; set; }
 
         public Unit Unit { get; set; }        
 
@@ -66,9 +66,13 @@ namespace MedApp.DataLayer.Models
 
         public Practice Practice {get;set;}
 
-        public Race Race { get; set; }
+        public virtual Race Race { get; set; }
 
-        public Race Race2 { get; set; }
+        public int? Race2Id { get; set; }
+
+        public int? RaceId { get; set; }
+
+        public virtual Race Race2 { get; set; }
 
         public Ethnicity Ethnicity { get; set; }
 
@@ -92,7 +96,9 @@ namespace MedApp.DataLayer.Models
 
         public virtual ICollection<PatientVisit> PatientVisits { get; set; }
 
-        //public virtual ICollection<Case> Cases { get; set; }
+        public virtual ICollection<Case> PatientCases { get; set; }
+
+        public virtual ICollection<Case> GuarantorCases { get; set; }
         
     }
 }
