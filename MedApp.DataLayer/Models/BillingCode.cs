@@ -22,6 +22,15 @@ namespace MedApp.DataLayer.Models
 
         [StringLength(20)]
         public string Description { get; set; }
+
+        public DateTime DateModified { get; set; }
+
+        public DateTime DateCreated { get; set; }
+
+        public User CreatedBy { get; set; }
+
+        public User ModifiedBy { get; set; }
+
         public virtual ICollection<Patient> Patients { get; set; }
     }
 }

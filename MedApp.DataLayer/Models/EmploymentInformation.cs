@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 
 namespace MedApp.DataLayer.Models
 {
-    public class PatientDefEmploymentInf
+    public class EmploymentInformation
     {
-        [Key, ForeignKey("Patient")]        
-        public int PatientId { get; set; }
+        [Key]
+        [DatabaseGeneratedAttribute(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
+        public int Id { get; private set; }
 
         public Employer Employer { get; set; }
 
@@ -24,6 +25,9 @@ namespace MedApp.DataLayer.Models
         public string Location { get; set; }
 
         public DateTime RetirementDate { get; set; }
-        public virtual Patient Patient { get; set; }
+
+        public virtual ICollection<Patient> Patients { get; set; }
+
+        public virtual ICollection<Case> Cases { get; set; }
     }
 }

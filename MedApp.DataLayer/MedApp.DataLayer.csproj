@@ -51,9 +51,14 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="Emuns.cs" />
     <Compile Include="Models\BillingCode.cs" />
+    <Compile Include="Models\Case.cs" />
+    <Compile Include="Models\StudentStatus.cs" />
+    <Compile Include="Models\MaritalStatus.cs" />
+    <Compile Include="Models\PaymentPlan.cs" />
+    <Compile Include="Models\PatientVisit.cs" />
     <Compile Include="Models\EmployerStatus.cs" />
     <Compile Include="Models\Employer.cs" />
-    <Compile Include="Models\PatientDefEmploymentInf.cs" />
+    <Compile Include="Models\EmploymentInformation.cs" />
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\PatientFlag.cs" />
     <Compile Include="Models\Provider.cs" />

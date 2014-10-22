@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace MedApp.DataLayer.Models
     {
         [Key]
         [DatabaseGeneratedAttribute(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
+        
         public int Id { get; private set; }
 
         [StringLength(50, MinimumLength = 3)]
@@ -23,5 +25,7 @@ namespace MedApp.DataLayer.Models
         public virtual Role  Role { get; set; }
 
         public virtual ICollection<Practice> Practices { get; set; }
+
+        public virtual ICollection<BillingCode> BillingCodes { get; set; }
     }
 }

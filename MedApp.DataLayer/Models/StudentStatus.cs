@@ -9,18 +9,16 @@ using System.Threading.Tasks;
 
 namespace MedApp.DataLayer.Models
 {
-    public class Employer
+    public class StudentStatus
     {
         [Key]
         [DatabaseGeneratedAttribute(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
         public int Id { get; private set; }
 
-        [StringLength(10)]
-        public string Code { get; set; }
+        [StringLength(20)]
+        public string Status { get; set; }
 
-
-        //need to add properties
-
-        public virtual ICollection<EmploymentInformation> PatientDefEmploymentInfs { get; set; }
+        public virtual ICollection<Case> Cases { get; set; }
+       
     }
 }

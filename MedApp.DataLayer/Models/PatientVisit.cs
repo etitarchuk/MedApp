@@ -9,18 +9,20 @@ using System.Threading.Tasks;
 
 namespace MedApp.DataLayer.Models
 {
-    public class Employer
+    public class PatientVisit
     {
         [Key]
         [DatabaseGeneratedAttribute(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
         public int Id { get; private set; }
+               
+        public DateTime VisitDate { get; set; }
 
-        [StringLength(10)]
-        public string Code { get; set; }
+        public decimal Height { get; set; }
 
+        public decimal Weight { get; set; }
 
-        //need to add properties
+        public Patient Patient { get; set; }
 
-        public virtual ICollection<EmploymentInformation> PatientDefEmploymentInfs { get; set; }
+        
     }
 }

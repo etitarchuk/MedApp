@@ -52,6 +52,8 @@ namespace MedApp.DataLayer.Models
 
         public DateTime SignatureDate { get; set; }
 
+        public bool IsSmoker { get; set; }
+
         public Sex Sex { get; set; }
 
         public Unit Unit { get; set; }        
@@ -82,12 +84,15 @@ namespace MedApp.DataLayer.Models
 
         public PatientEmergencyContact PatientEmergencyContact { get; set; }
 
-        public virtual PatientDefEmploymentInf PatientDefaultEmploymentInformation { get; set; } 
+        public PaymentPlan PaymentPlan { get; set; }
+
+        public EmploymentInformation PatientDefaultEmploymentInformation { get; set; }
+ 
         public virtual ICollection<Phone> Phones { get; set; }
 
-        
+        public virtual ICollection<PatientVisit> PatientVisits { get; set; }
 
-        
+        //public virtual ICollection<Case> Cases { get; set; }
         
     }
 }

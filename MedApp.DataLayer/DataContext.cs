@@ -14,7 +14,7 @@ namespace MedApp.DataLayer
       public DataContext()
           : base("name=DataContext")
                 {
-                    //Database.SetInitializer<DataContext>(new DropCreateDatabaseIfModelChanges<DataContext>());
+                    Database.SetInitializer<DataContext>(new DropCreateDatabaseIfModelChanges<DataContext>());
                 }
       public virtual DbSet<User> Users { get; set; }
       public virtual DbSet<Role> Roles { get; set; }

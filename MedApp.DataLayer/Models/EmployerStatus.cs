@@ -19,6 +19,6 @@ namespace MedApp.DataLayer.Models
         public string Status { get; set; }
 
 
-        public virtual ICollection<PatientDefEmploymentInf> PatientDefEmploymentInfs { get; set; }
+        public virtual ICollection<EmploymentInformation> PatientDefEmploymentInfs { get; set; }
     }
 }

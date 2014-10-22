@@ -9,18 +9,25 @@ using System.Threading.Tasks;
 
 namespace MedApp.DataLayer.Models
 {
-    public class Employer
+    public class PaymentPlan
     {
         [Key]
         [DatabaseGeneratedAttribute(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
         public int Id { get; private set; }
 
-        [StringLength(10)]
+        [StringLength(3)]
         public string Code { get; set; }
 
+        public bool Inactive { get; set; }
 
-        //need to add properties
+        [StringLength(20)]
+        public string Description { get; set; }
 
-        public virtual ICollection<EmploymentInformation> PatientDefEmploymentInfs { get; set; }
+        public int FirstPaymentDue { get; set; }
+
+        public int DueEvery { get; set; }
+
+        public decimal Amount { get; set; }
+        public virtual ICollection<Patient> Patients { get; set; }
     }
 }

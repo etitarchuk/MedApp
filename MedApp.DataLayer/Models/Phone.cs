@@ -29,6 +29,6 @@ namespace MedApp.DataLayer.Models
 
         public virtual ICollection<Practice> Practices { get; set; }
 
-        public virtual ICollection<PatientDefEmploymentInf> PatientDefEmploymentInf { get; set; }
+        public virtual ICollection<EmploymentInformation> PatientDefEmploymentInf { get; set; }
     }
 }
