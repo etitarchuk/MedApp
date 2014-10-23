@@ -90,30 +90,55 @@ namespace MedApp.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
-                IdentityResult result = await UserManager.CreateAsync(user, model.Password);
+                var result = await UserManager.CreateAsync(user, model.Password);
+
                 if (result.Succeeded)
                 {
+                    // если создание прошло успешно, то добавляем роль пользователя
+                    await AddUserToRoleAsync(user, "user");
+
                     await SignInAsync(user, isPersistent: false);
-
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
                     return RedirectToAction("Index", "Home");
                 }
                 else
                 {
                     AddErrors(result);
                 }
+
+
+                //var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+                //IdentityResult result = await UserManager.CreateAsync(user, model.Password);
+                //if (result.Succeeded)
+                //{
+                //    await SignInAsync(user, isPersistent: false);
+
+                //    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                //    // Send an email with this link
+                //    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                //    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                //    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                //    return RedirectToAction("Index", "Home");
+                //}
+                //else
+                //{
+                //    AddErrors(result);
+                //}
             }
 
             // If we got this far, something failed, redisplay form
             return View(model);
         }
-
+        private async Task AddUserToRoleAsync(ApplicationUser user, string role)
+        {
+            using (ApplicationDbContext db = new ApplicationDbContext())
+            {
+                var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+                var result = await userManager.AddToRoleAsync(user.Id, role);
+            }
+        }
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]

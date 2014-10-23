@@ -28,5 +28,6 @@ namespace MedApp.DataLayer.Models
 
         public virtual ICollection<BillingCode> CreatedByBillingCodes { get; set; }
         public virtual ICollection<BillingCode> ModifiedByBillingCodes { get; set; }
+
     }
 }
