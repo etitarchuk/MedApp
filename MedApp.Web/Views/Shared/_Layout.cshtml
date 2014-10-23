@@ -18,7 +18,7 @@
 
             <div id="headerTop" class="row">
                 <div class="col-lg-6">
-                    <img src="~/Content/Images/logoMedAppWithText%20(Vector).svg" height="100" alt="Medical Software"/>
+                    <img class="mainLogo" src="~/Content/Images/logoMedAppWithText%20(Vector).svg" height="100" alt="Medical Software"/>
                 </div>
                 <div class="col-lg-6">
                     @Html.Partial("_LoginPartial")
@@ -37,7 +37,23 @@
                         <ul class="nav navbar-nav">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
                             <li>@Html.ActionLink("Prictice", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Accounting", "Index", "Home")</li>
+                            <li>
+                                @Html.ActionLink("Accounting", "Index", "Home")
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Transactions", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("Deposits\\Payments", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("Claim Management", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("Statement Management", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("Patient Ledger", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("Guarantor Ladger", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("Quick Balance", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("Patient Quick Entry", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("Billing Charges", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("Small balance Write-Off", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("Collection List", "Index", "Home")</li>
+                                </ul>
+                            </li>
+
                             <li>@Html.ActionLink("Patient Management", "Index", "Home")</li>
                             <li>@Html.ActionLink("Settings", "Index", "Home")</li>
                             <li>@Html.ActionLink("Appointment Book", "Index", "Home")</li>
