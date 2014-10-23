@@ -30,7 +30,7 @@ namespace MedApp.Web.Models
             return new ApplicationDbContext();
         }
     }
-    public class AppDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
+    public class AppDbInitializer : CreateDatabaseIfNotExists<ApplicationDbContext>
     {
         protected override void Seed(ApplicationDbContext context)
         {
@@ -47,8 +47,8 @@ namespace MedApp.Web.Models
             roleManager.Create(role2);
 
             // создаем пользователей
-            var admin = new ApplicationUser { UserName = "Eugene" };
-            string password = "12345678";
+            var admin = new ApplicationUser { UserName = "admin", Email = "admin" };
+            string password = "admin1";
             var result = userManager.Create(admin, password);
 
             // если создание пользователя прошло успешно
