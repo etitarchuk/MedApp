@@ -1,2 +1,16 @@
-﻿
+﻿body {
+    background-color:#F8F8F8;
+}
 
+.navbar-collapse {
+    padding-left:0;
+}
+
+#headerTop {
+    height:130px;
+}
+
+.container {
+    padding:30px;
+    background-color:white;
+}
