@@ -37,9 +37,8 @@ namespace MedApp.Web.Models
 
     public class LoginViewModel
     {
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
+        [Required]        
+        [Display(Name = "Login")]
         public string Email { get; set; }
 
         [Required]
