@@ -9,17 +9,29 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Styles.Render("~/bundles/custom")
-    @Styles.Render("~/bundles/smartmenuscript")
+    @Scripts.Render("~/bundles/smartmenuscript")
     @Styles.Render("~/Content/smartmenu")
     @RenderSection("scripts", required: false)
     <script type="text/javascript">
 	$(function() {
 		$('#main-menu').smartmenus({
-			subMenusSubOffsetX: 1,
-			subMenusSubOffsetY: -8
+			subMenusSubOffsetX: 0,
+			subMenusSubOffsetY: 0
 		});
 	});
     </script>
+    <style type="text/css">
+        #main-menu {
+            position: relative;
+            z-index: 9999;
+            width: auto;
+        }
+
+            #main-menu ul {
+                width: 12em; /* fixed width only please - you can use the "subMenusMinWidth"/"subMenusMaxWidth" script options to override this if you like */
+            }
+    </style>
+
 </head>
 <body>
     <div class="container">
@@ -34,197 +46,128 @@
                     @Html.Partial("_LoginPartial")
                 </div>
             </div>
-            <div id="headerMenu" class="navbar-default">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div id="responsive-menu" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                          @if (Request.IsAuthenticated)
-                            {
-                              
-                             if(User.IsInRole("admin")){
-                                  <li>@Html.ActionLink("Prictice", "Index", "Home")</li>
-                             }
+            <div id="headerMenu" class="row">
+                <ul id="main-menu" class="sm sm-blue">
+                    <li>@Html.ActionLink("Home".ToUpper(), "Index", "Home")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        if(User.IsInRole("admin"))
+                        {
                             <li>
-                                @Html.ActionLink("Accounting", "Index", "Home")
-                                <ul class="dropdown-menu">
-                                    <li>@Html.ActionLink("Transactions", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("Deposits\\Payments", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("Claim Management", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("Statement Management", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("Patient Ledger", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("Guarantor Ladger", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("Quick Balance", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("Patient Quick Entry", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("Billing Charges", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("Small balance Write-Off", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("Collection List", "Index", "Home")</li>
-                                </ul>
+                                @Html.ActionLink("Prictice", "Index", "Home")
                             </li>
-
-                            <li>@Html.ActionLink("Patient Management", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Settings", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Appointment Book", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Reports", "Index", "Home")</li>
-                          }
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        </ul>
-                    </div> 
-                </div>
+                        }                    
+                    
+                        <li>
+                            @Html.ActionLink("Accounting".ToUpper(), "Index", "Home", new { href = "javascript:void(0);" })
+                            <ul>
+                                <li>@Html.ActionLink("Transactions", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Deposits\\Payments", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Claim Management", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Statement Management", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Patient Ledger", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Guarantor Ladger", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Quick Balance", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Patient Quick Entry", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Billing Charges", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Small balance Write-Off", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Collection List", "Index", "Home")</li>
+                            </ul>
+                        </li>
+                    
+                        <li>
+                            @Html.ActionLink("Patient Management".ToUpper(), "Index", "Home", new { href = "javascript:void(0);" })
+                            <ul>
+                                <li>@Html.ActionLink("Patients, Guarantors and Cases", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Patient Recall", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Providers", "Index", "Home")
+                                    <ul>
+                                        <li>@Html.ActionLink("Providers", "Index", "Home")</li>
+                                        <li>@Html.ActionLink("Classes", "Index", "Home")</li>
+                                    </ul>
+                                </li>
+                                <li>@Html.ActionLink("Referring Providers", "Index", "Home")</li>
+                            </ul>
+                        </li>
+                    
+                        <li>@Html.ActionLink("Appointment Book".ToUpper(), "Index", "Home")</li>
+                    
+                        <li>
+                            @Html.ActionLink("Lists".ToUpper(), "Index", "Home", new { href = "javascript:void(0);" })
+                            <ul>
+                                <li>@Html.ActionLink("Procedure\\Payment\\Adjustment Codes", "Index", "Home")</li>
+                                <li>@Html.ActionLink("MultiLink Codes", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Diagnosis Codes", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Insurance", "Index", "Home")
+                                    <ul>
+                                        <li>@Html.ActionLink("Carriers", "Index", "Home")</li>
+                                        <li>@Html.ActionLink("Classes", "Index", "Home")</li>
+                                    </ul>
+                                </li>
+                                <li>@Html.ActionLink("Addresses", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Edi Receivers", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Facilities", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Billing Codes", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Contact List", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Condition Codes", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Claim rejection messages", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Payment plans", "Index", "Home")</li>
+                            </ul>
+                        </li>
+                    
+                        <li>
+                            @Html.ActionLink("Reports".ToUpper(), "Index", "Home", new { href = "javascript:void(0);" })
+                            <ul>
+                                <li>@Html.ActionLink("Day Sheets", "Index", "Home")
+                                    <ul>
+                                        <li>@Html.ActionLink("Patient Day Sheet", "Index", "Home")</li>
+                                        <li>@Html.ActionLink("Procedure Day Sheet", "Index", "Home")</li>
+                                        <li>@Html.ActionLink("Payment Day Sheet", "Index", "Home")</li>
+                                    </ul>
+                                </li>
+                                <li>@Html.ActionLink("Analisys Reports", "Index", "Home")
+                                    <ul>
+                                        <li>@Html.ActionLink("Payment", "Index", "Home")
+                                            <ul>
+                                                <li>@Html.ActionLink("Billing/Payment Status", "Index", "Home")</li>
+                                                <li>@Html.ActionLink("Co-Payment Report", "Index", "Home")</li>
+                                                <li>@Html.ActionLink("Outstanding CO-Payment Report", "Index", "Home")</li>
+                                                <li>@Html.ActionLink("Unapplied Payment/Adjustment Report", "Index", "Home")</li>
+                                                <li>@Html.ActionLink("Unapplied Deposit Report", "Index", "Home")</li>
+                                            </ul>
+                                        </li>
+                                        <li>@Html.ActionLink("Referring", "Index", "Home")
+                                            <ul>
+                                                <li>@Html.ActionLink("Practice Analysis", "Index", "Home")</li>
+                                                <li>@Html.ActionLink("Insurance Analysis", "Index", "Home")</li>
+                                            </ul>
+                                        </li>
+                                        <li>@Html.ActionLink("Electronic Claims Analysis", "Index", "Home")
+                                            <ul>
+                                                <li>@Html.ActionLink("Detail", "Index", "Home")</li>
+                                                <li>@Html.ActionLink("Summary", "Index", "Home")</li>
+                                            </ul>
+                                        </li>
+                                        <li>@Html.ActionLink("Appointment Eliggigbility Analysis", "Index", "Home")
+                                            <ul>
+                                                <li>@Html.ActionLink("Detail", "Index", "Home")</li>
+                                                <li>@Html.ActionLink("Summary", "Index", "Home")</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>                            
+                            </ul>
+                        </li>
+                    }
+                    <li>@Html.ActionLink("About".ToUpper(), "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact".ToUpper(), "Contact", "Home")</li>
+                </ul>
             </div>
 
         </section>
 
         <section id="body">
-            <ul id="main-menu" class="sm sm-blue">
-                <li><a href="http://www.smartmenus.org/">Home</a></li>
-                <li>
-                    <a href="http://www.smartmenus.org/about/">About</a>
-                    <ul>
-                        <li><a href="http://www.smartmenus.org/about/introduction-to-smartmenus-jquery/">Introduction to SmartMenus jQuery</a></li>
-                        <li><a href="http://www.smartmenus.org/about/themes/">Themes</a></li>
-                        <li><a href="http://vadikom.com/about/#vasil-dinkov">The author</a></li>
-                        <li>
-                            <a href="http://www.smartmenus.org/about/vadikom/">The company</a>
-                            <ul>
-                                <li><a href="http://vadikom.com/about/">About Vadikom</a></li>
-                                <li><a href="http://vadikom.com/projects/">Projects</a></li>
-                                <li><a href="http://vadikom.com/services/">Services</a></li>
-                                <li><a href="http://www.smartmenus.org/about/vadikom/privacy-policy/">Privacy policy</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="http://www.smartmenus.org/about/old-smartmenus-versions/">Old SmartMenus versions</a></li>
-                    </ul>
-                </li>
-                <li><a href="http://www.smartmenus.org/download/">Download</a></li>
-                <li>
-                    <a href="http://www.smartmenus.org/support/">Support</a>
-                    <ul>
-                        <li><a href="http://www.smartmenus.org/support/premium-support/">Premium support</a></li>
-                        <li><a href="http://www.smartmenus.org/support/forums/">Forums</a></li>
-                    </ul>
-                </li>
-                <li><a href="http://www.smartmenus.org/docs/">Docs</a></li>
-                <li>
-                    <a href="#">Sub test</a>
-                    <ul>
-                        <li><a href="#">Dummy item</a></li>
-                        <li><a href="#">Dummy item</a></li>
-                        <li><a href="#" class="disabled">Disabled menu item</a></li>
-                        <li><a href="#">Dummy item</a></li>
-                        <li>
-                            <a href="#">more...</a>
-                            <ul>
-                                <li><a href="#">A pretty long text to test the default subMenusMaxWidth:20em setting for the sub menus</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li>
-                                    <a href="#">more...</a>
-                                    <ul>
-                                        <li><a href="#">Dummy item</a></li>
-                                        <li><a href="#" class="current">A 'current' class item</a></li>
-                                        <li><a href="#">Dummy item</a></li>
-                                        <li>
-                                            <a href="#">more...</a>
-                                            <ul>
-                                                <li><a href="#">subMenusMinWidth</a></li>
-                                                <li><a href="#">10em</a></li>
-                                                <li><a href="#">forced.</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Dummy item</a></li>
-                                        <li><a href="#">Dummy item</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">A pretty long text to test the default subMenusMaxWidth:20em setting for the sub menus</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">A pretty long text to test the default subMenusMaxWidth:20em setting for the sub menus</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">A pretty long text to test the default subMenusMaxWidth:20em setting for the sub menus</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">A pretty long text to test the default subMenusMaxWidth:20em setting for the sub menus</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">A pretty long text to test the default subMenusMaxWidth:20em setting for the sub menus</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                                <li><a href="#">Dummy item</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Mega menu</a>
-                    <ul class="mega-menu">
-                        <li>
-                            <!-- The mega drop down contents -->
-                            <div style="width:400px;max-width:100%;">
-                                <div style="padding:5px 24px;">
-                                    <p>This is a mega drop down test. Just set the "mega-menu" class to the parent UL element to inform the SmartMenus script. It can contain <strong>any HTML</strong>.</p>
-                                    <p>Just style the contents as you like (you may need to reset some SmartMenus inherited styles - e.g. for lists, links, etc.)</p>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+            
 
             @RenderBody()
         </section>
