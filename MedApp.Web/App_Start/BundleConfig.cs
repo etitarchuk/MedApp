@@ -30,6 +30,12 @@ namespace MedApp.Web
             bundles.Add(new StyleBundle("~/bundles/custom").Include(
                       "~/Content/layout.css"));
 
+            bundles.Add(new StyleBundle("~/Content/smartmenu").Include(
+                      "~/Content/sm-core-css.css",
+                      "~/Content/sm-simple.css"));
+            bundles.Add(new ScriptBundle("~/bundles/smartmenuscript").Include(
+                      "~/Content/jquery.smartmenus.js"));
+
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
             BundleTable.EnableOptimizations = true;
