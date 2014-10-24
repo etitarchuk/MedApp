@@ -175,6 +175,8 @@
     <Content Include="Content\fonts.css" />
     <Content Include="Content\Images\logoMedAppWithText %28Vector%29.svg" />
     <Content Include="Content\layout.css" />
+    <Content Include="Content\sm-core-css.css" />
+    <Content Include="Content\sm-simple.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -203,6 +205,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.smartmenus.js" />
+    <Content Include="Scripts\jquery.smartmenus.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
