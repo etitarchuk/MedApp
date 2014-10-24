@@ -1107,8 +1107,8 @@
 		scrollStep: 		30,		// pixels step when scrolling long sub menus that do not fit in the viewport height
 		scrollInterval:		30,		// interval between each scrolling step
 		scrollAccelerate:	true,		// accelerate scrolling or use a fixed step
-		showTimeout:		250,		// timeout before showing the sub menus
-		hideTimeout:		500,		// timeout before hiding the sub menus
+		showTimeout:		100,		// timeout before showing the sub menus
+		hideTimeout:		200,		// timeout before hiding the sub menus
 		showDuration:		0,		// duration for show animation - set to 0 for no animation - matters only if showFunction:null
 		showFunction:		null,		// custom function to use when showing a sub menu (the default is the jQuery 'show')
 							// don't forget to call complete() at the end of whatever you do
