@@ -36,7 +36,12 @@
                     <div id="responsive-menu" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Prictice", "Index", "Home")</li>
+                          @if (Request.IsAuthenticated)
+                            {
+                              
+                             if(User.IsInRole("admin")){
+                                  <li>@Html.ActionLink("Prictice", "Index", "Home")</li>
+                             }
                             <li>
                                 @Html.ActionLink("Accounting", "Index", "Home")
                                 <ul class="dropdown-menu">
@@ -58,6 +63,7 @@
                             <li>@Html.ActionLink("Settings", "Index", "Home")</li>
                             <li>@Html.ActionLink("Appointment Book", "Index", "Home")</li>
                             <li>@Html.ActionLink("Reports", "Index", "Home")</li>
+                          }
                             <li>@Html.ActionLink("About", "About", "Home")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         </ul>

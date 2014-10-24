@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
+using MedApp.DataLayer;
+using MedApp.DataLayer.Models;
 
 namespace MedApp.Web.Models
 {
@@ -50,12 +52,18 @@ namespace MedApp.Web.Models
             var admin = new ApplicationUser { UserName = "admin", Email = "admin" };
             string password = "admin1";
             var result = userManager.Create(admin, password);
-
+            
             // если создание пользователя прошло успешно
             if (result.Succeeded)
             {
+                using (DataContext contentContext = new DataContext())
+                {
+                    contentContext.Users.Add(new User() { Username = admin.UserName });
+                    contentContext.SaveChanges();
+                }
                 // добавляем для пользователя роль
                 userManager.AddToRole(admin.Id, role1.Name);
+
             }
 
             base.Seed(context);

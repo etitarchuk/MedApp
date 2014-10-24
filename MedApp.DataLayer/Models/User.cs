@@ -19,8 +19,8 @@ namespace MedApp.DataLayer.Models
         [StringLength(50, MinimumLength = 3)]
         public string Username { get; set; }
 
-        [StringLength(50, MinimumLength = 3)]
-        public string Password { get; set; }
+      //  [StringLength(50, MinimumLength = 3)]
+       // public string Password { get; set; }
 
         public virtual Role  Role { get; set; }
 

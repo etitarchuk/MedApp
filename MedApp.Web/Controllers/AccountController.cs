@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
 using MedApp.Web.Models;
+using MedApp.DataLayer;
+using MedApp.DataLayer.Models;
 
 namespace MedApp.Web.Controllers
 {
@@ -93,9 +95,14 @@ namespace MedApp.Web.Controllers
 
                 var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
-
+               
                 if (result.Succeeded)
                 {
+                    using (DataContext contentContext = new DataContext())
+                    {
+                        contentContext.Users.Add(new User() { Username = user.UserName });
+                        contentContext.SaveChanges();
+                    }
                     // если создание прошло успешно, то добавляем роль пользователя
                     await AddUserToRoleAsync(user, "user");
 
