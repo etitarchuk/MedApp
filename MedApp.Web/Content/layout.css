@@ -6,6 +6,11 @@
     padding-left:0;
 }
 
+.mainLogo {
+    margin-top:20px;
+    margin-left:40px;
+}
+
 #headerTop {
     height:130px;
 }
@@ -13,4 +18,9 @@
 .container {
     padding:30px;
     background-color:white;
+}
+
+#responsive-menu li {
+    border-width:1px;
+    border-bottom-color:#DDDDDD;
 }
