@@ -37,6 +37,14 @@ namespace MedApp.Web
             bundles.Add(new ScriptBundle("~/bundles/smartmenuscript").Include(
                       "~/Scripts/jquery.smartmenus.js"));
 
+            bundles.Add(new StyleBundle("~/Content/jqueryui").Include(
+                      "~/Content/jquery-ui-1.11.2.custom/jquery-ui.min.css",
+                      "~/Content/jquery-ui-1.11.2.custom/jquery-ui.structure.min.css",
+                      "~/Content/jquery-ui-1.11.2.custom/jquery-ui.theme.min.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jqueryuiscript").Include(
+                      "~/Scripts/jquery-ui-1.11.2.custom/jquery-ui.min.js"));
+
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
             BundleTable.EnableOptimizations = true;
