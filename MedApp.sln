@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedApp.Core", "MedApp.Core\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedApp.Web", "MedApp.Web\MedApp.Web.csproj", "{08587A8C-7AC4-411F-B8B1-C906AB0F5670}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedApp.Common", "MedApp.Common\MedApp.Common.csproj", "{3716AB6A-1C51-4222-9655-C509C9A88E28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{08587A8C-7AC4-411F-B8B1-C906AB0F5670}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08587A8C-7AC4-411F-B8B1-C906AB0F5670}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08587A8C-7AC4-411F-B8B1-C906AB0F5670}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3716AB6A-1C51-4222-9655-C509C9A88E28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3716AB6A-1C51-4222-9655-C509C9A88E28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3716AB6A-1C51-4222-9655-C509C9A88E28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3716AB6A-1C51-4222-9655-C509C9A88E28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
