@@ -10,7 +10,7 @@ namespace MedApp.Core
 {
     public class UserManager
     {
-        private DataContext _dataContext;
+        private MedApp.DataLayer.DataContext _dataContext;
 
         private static UserManager _instance;
         public static UserManager Instance
@@ -25,7 +25,7 @@ namespace MedApp.Core
 
         protected UserManager()
         {
-            _dataContext = new DataContext();
+            _dataContext = new MedApp.DataLayer.DataContext();
         }
 
         public void CreateUser(string username)
