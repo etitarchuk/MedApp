@@ -7,12 +7,16 @@
 }
 
 .mainLogo {
-    margin-top:20px;
-    margin-left:40px;
+    /*margin-top:20px;*/
+    margin-left:20px;
 }
 
 #headerTop {
     height:130px;
+}
+
+#headerMenu {
+    margin-top:20px;
 }
 
 .container {
@@ -20,7 +24,7 @@
     background-color:white;
 }
 
-#responsive-menu li {
+/*#responsive-menu li {
     border-width:1px;
     border-bottom-color:#DDDDDD;
 }
@@ -71,4 +75,4 @@
     -webkit-border-radius:6px 0 6px 6px;
     -moz-border-radius:6px 0 6px 6px;
     border-radius:6px 0 6px 6px;
-}
+}*/
