@@ -24,6 +24,13 @@
     background-color:white;
 }
 
+.selected
+{
+    background-color:#2CA6D9;
+    color:white !important;
+    font-weight:bold;
+}
+
 /*#responsive-menu li {
     border-width:1px;
     border-bottom-color:#DDDDDD;

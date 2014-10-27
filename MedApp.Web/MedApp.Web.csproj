@@ -195,6 +195,7 @@
     <Content Include="Content\jquery-ui-1.11.2.custom\jquery-ui.structure.min.css" />
     <Content Include="Content\jquery-ui-1.11.2.custom\jquery-ui.theme.css" />
     <Content Include="Content\jquery-ui-1.11.2.custom\jquery-ui.theme.min.css" />
+    <Content Include="Content\jquery-ui-1.11.2.custom\ui.jqgrid.css" />
     <Content Include="Content\layout.css" />
     <Content Include="Content\sm-styles.css" />
     <Content Include="Content\sm-core-css.css" />
@@ -226,8 +227,10 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.11.2.custom\grid.locale-en.js" />
     <Content Include="Scripts\jquery-ui-1.11.2.custom\jquery-ui.js" />
     <Content Include="Scripts\jquery-ui-1.11.2.custom\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.2.custom\jquery.jqGrid.min.js" />
     <Content Include="Scripts\jquery.smartmenus.js" />
     <Content Include="Scripts\jquery.smartmenus.min.js" />
     <Content Include="Scripts\jquery.validate.js" />

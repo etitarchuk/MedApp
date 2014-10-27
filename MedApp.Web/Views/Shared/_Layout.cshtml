@@ -46,9 +46,13 @@
                     @Html.Partial("_LoginPartial")
                 </div>
             </div>
+            @{
+                var controllerName = Request.RequestContext.RouteData.Values["controller"].ToString();
+                
             <div id="headerMenu" class="row">
-                <ul id="main-menu" class="sm sm-blue">
-                    <li>@Html.ActionLink("Home".ToUpper(), "Index", "Home")</li>
+                <ul id="main-menu" class="sm sm-blue">                    
+                    
+                    <li>@Html.ActionLink("Home".ToUpper(), "Index", "Home", new { @class = "Home" == controllerName ? "selected" : "" })</li>
                     @if (Request.IsAuthenticated)
                     {
                         if(User.IsInRole("admin"))
@@ -111,7 +115,7 @@
                                 <li>@Html.ActionLink("Contact List", "Index", "Home")</li>
                                 <li>@Html.ActionLink("Condition Codes", "Index", "Home")</li>
                                 <li>@Html.ActionLink("Claim rejection messages", "Index", "Home")</li>
-                                <li>@Html.ActionLink("Payment plans", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Payment plans", "PaymentCodeList", "Lists")</li>
                             </ul>
                         </li>
                     
@@ -163,7 +167,7 @@
                     <li>@Html.ActionLink("Contact".ToUpper(), "Contact", "Home")</li>
                 </ul>
             </div>
-
+                    }
         </section>
 
         <section id="body">
