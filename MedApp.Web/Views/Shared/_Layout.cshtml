@@ -8,9 +8,16 @@
     @Scripts.Render("~/bundles/modernizr")    
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @Styles.Render("~/bundles/custom")
-    @Scripts.Render("~/bundles/smartmenuscript")
+    @Scripts.Render("~/bundles/smartmenu")
     @Styles.Render("~/Content/smartmenu")
+
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/jqueryui1")
+
+    @Scripts.Render("~/bundles/grid")
+    @Styles.Render("~/Content/grid")
+
+
     @RenderSection("scripts", required: false)
     <script type="text/javascript">
 	$(function() {
