@@ -14,7 +14,7 @@ namespace MedApp.Web.Controllers
             return View();
         }
 
-        public ActionResult PaymentCodeList()
+        public ActionResult PaymentPlanList()
         {
             return View();
         }
