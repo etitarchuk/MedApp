@@ -173,6 +173,20 @@
   <ItemGroup>
     <Content Include="Content\Bootstrap\bootstrap.css" />
     <Content Include="Content\Bootstrap\bootstrap.min.css" />
+    <Content Include="Content\BsGrid\jquery.bs_grid.bs2.css" />
+    <Content Include="Content\BsGrid\jquery.bs_grid.css" />
+    <Content Include="Content\BsGrid\jquery.bs_grid.js" />
+    <Content Include="Content\BsGrid\jquery.bs_pagination.css" />
+    <Content Include="Content\BsGrid\jquery.bs_pagination.js" />
+    <Content Include="Content\BsGrid\jquery.bs_pagination.min.css" />
+    <Content Include="Content\BsGrid\jquery.bs_pagination.min.js" />
+    <Content Include="Content\BsGrid\jquery.jui_filter_rules.bs.css" />
+    <Content Include="Content\BsGrid\jquery.jui_filter_rules.js" />
+    <Content Include="Content\BsGrid\Localization\en.js" />
+    <Content Include="Content\BsGrid\Localization\en.min.js" />
+    <Content Include="Content\BsGrid\Localization\filter_en.js" />
+    <Content Include="Content\BsGrid\Localization\grid_en.js" />
+    <Content Include="Content\BsGrid\moment.min.js" />
     <Content Include="Content\Styles\fonts.css" />
     <Content Include="Content\Images\jquery-ui-1.11.2.custom\ui-bg_flat_0_698A88_40x100.png" />
     <Content Include="Content\Images\jquery-ui-1.11.2.custom\ui-bg_flat_0_aaaaaa_40x100.png" />

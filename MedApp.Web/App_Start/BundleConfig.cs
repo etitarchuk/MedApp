@@ -33,13 +33,13 @@ namespace MedApp.Web
             bundles.Add(new ScriptBundle("~/bundles/smartmenu").Include(
                       "~/Content/JqMenu/jquery.smartmenus.js"));
 
-            bundles.Add(new StyleBundle("~/Content/jqueryui").Include(
+            bundles.Add(new StyleBundle("~/Content/jqueryui1").Include(
                       "~/Content/JqueryUI/jquery-ui.min.css",
                       "~/Content/JqueryUI/jquery-ui.structure.min.css",
                       "~/Content/JqueryUI/jquery-ui.theme.min.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                      "~/Scripts/JqueryUI/jquery-ui.min.js"));
+                      "~/Content/JqueryUI/jquery-ui.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/grid").Include(
                       "~/Content/JqGrid/grid.locale-en.js",
