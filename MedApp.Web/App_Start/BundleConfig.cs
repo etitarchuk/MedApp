@@ -5,48 +5,48 @@ namespace MedApp.Web
 {
     public class BundleConfig
     {
-        // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Content/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+                        "~/Content/Scripts/jquery.validate*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                        "~/Content/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Content/Bootstrap/bootstrap.js",
+                      "~/Content/Bootstrap/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
-
-            bundles.Add(new StyleBundle("~/bundles/custom").Include(
-                      "~/Content/layout.css"));
+                      "~/Content/Bootstrap/bootstrap.css",
+                      "~/Content/Styles/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/smartmenu").Include(
-                      "~/Content/sm-core-css.css",
-                      "~/Content/sm-styles.css"));
+                      "~/Content/JqMenu/sm-core-css.css",
+                      "~/Content/JqMenu/sm-styles.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/smartmenuscript").Include(
-                      "~/Scripts/jquery.smartmenus.js"));
+            bundles.Add(new ScriptBundle("~/bundles/smartmenu").Include(
+                      "~/Content/JqMenu/jquery.smartmenus.js"));
 
             bundles.Add(new StyleBundle("~/Content/jqueryui").Include(
-                      "~/Content/jquery-ui-1.11.2.custom/jquery-ui.min.css",
-                      "~/Content/jquery-ui-1.11.2.custom/jquery-ui.structure.min.css",
-                      "~/Content/jquery-ui-1.11.2.custom/jquery-ui.theme.min.css",
-                      "~/Content/jquery-ui-1.11.2.custom/ui.jqgrid.css"));
+                      "~/Content/JqueryUI/jquery-ui.min.css",
+                      "~/Content/JqueryUI/jquery-ui.structure.min.css",
+                      "~/Content/JqueryUI/jquery-ui.theme.min.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryuiscript").Include(
-                      "~/Scripts/jquery-ui-1.11.2.custom/jquery-ui.min.js",
-                      "~/Scripts/jquery-ui-1.11.2.custom/grid.locale-en.js",
-                      "~/Scripts/jquery-ui-1.11.2.custom/jquery.jqGrid.min.js"));
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                      "~/Scripts/JqueryUI/jquery-ui.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/grid").Include(
+                      "~/Content/JqGrid/grid.locale-en.js",
+                      "~/Content/JqGrid/jquery.jqGrid.min.js"));
+
+            bundles.Add(new StyleBundle("~/Content/grid").Include(
+                      "~/Content/JqGrid/ui.jqgrid.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
