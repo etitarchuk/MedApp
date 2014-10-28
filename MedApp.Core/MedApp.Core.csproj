@@ -46,10 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Lists\PaymentPlanManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MedApp.Common\MedApp.Common.csproj">
+      <Project>{3716ab6a-1c51-4222-9655-c509c9a88e28}</Project>
+      <Name>MedApp.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MedApp.DataLayer\MedApp.DataLayer.csproj">
       <Project>{68813a10-2a94-455c-83f9-ac716e826dcd}</Project>
       <Name>MedApp.DataLayer</Name>

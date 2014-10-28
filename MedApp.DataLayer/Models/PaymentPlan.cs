@@ -28,6 +28,11 @@ namespace MedApp.DataLayer.Models
         public int DueEvery { get; set; }
 
         public decimal Amount { get; set; }
+
+        public DateTime? DateModified { get; set; }
+
+        public DateTime? DateCreated { get; set; }
+
         public virtual ICollection<Patient> Patients { get; set; }
     }
 }
