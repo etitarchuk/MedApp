@@ -201,7 +201,7 @@
 ===================*/
 
 	.sm-blue li {		
-        border-width:0px 1px;
+        border-width:0px 1px 0px 0px;
         border-style:solid;
         border-color:#ddd;
 	}
@@ -218,8 +218,34 @@
 	.sm-blue li:first-child,
 	.sm-blue-vertical li,
 	.sm-blue ul li {
-		/*border-left:0;*/
+		border-left:1px;
+        border-left-style:solid;
+        border-left-color:#ddd;
 	}
+
+    .sm-blue li:hover
+    {
+        border-right-color:#2BD9BF;
+    }
+
+    .sm-blue ul li:hover {
+		border-left:3px;
+        border-left-style:solid;
+        border-left-color:#2BD9BF;
+        border-right-color:#ddd;
+	}
+    
+    .sm-blue ul li:hover ul li {
+		border-left:1px;
+        border-left-style:solid;
+        border-left-color:#ddd;
+        border-right-color:#ddd;
+	}
+
+    .sm-blue ul li:hover a {
+		padding-left:21px;
+	}
+
 
 
 /* Scrolling arrows containers for tall sub menus - test sub menu: "Sub test" -> "more..." -> "more..." in the default download package

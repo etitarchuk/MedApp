@@ -41,7 +41,8 @@ textarea {
 
 .selected
 {
-    background-color:#2CA6D9;
+    background-color:#00936E;
     color:white !important;
     font-weight:bold;
+    border-right-color:#00936E;
 }

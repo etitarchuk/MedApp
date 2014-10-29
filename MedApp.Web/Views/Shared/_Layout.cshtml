@@ -70,7 +70,7 @@
                         }                    
                     
                         <li>
-                            @Html.ActionLink("Accounting".ToUpper(), "Index", "Home", new { href = "javascript:void(0);" })
+                            @Html.ActionLink("Accounting".ToUpper(), "Index", "Home", new { href = "javascript:void(0);", @class = "Accounting" == controllerName ? "selected" : "" })
                             <ul>
                                 <li>@Html.ActionLink("Transactions", "Index", "Home")</li>
                                 <li>@Html.ActionLink("Deposits\\Payments", "Index", "Home")</li>
@@ -87,7 +87,7 @@
                         </li>
                     
                         <li>
-                            @Html.ActionLink("Patient Management".ToUpper(), "Index", "Home", new { href = "javascript:void(0);" })
+                            @Html.ActionLink("Patient Management".ToUpper(), "Index", "Home", new { href = "javascript:void(0);", @class = "Patient Management" == controllerName ? "selected" : "" })
                             <ul>
                                 <li>@Html.ActionLink("Patients, Guarantors and Cases", "Index", "Home")</li>
                                 <li>@Html.ActionLink("Patient Recall", "Index", "Home")</li>
@@ -104,7 +104,7 @@
                         <li>@Html.ActionLink("Appointment Book".ToUpper(), "Index", "Home")</li>
                     
                         <li>
-                            @Html.ActionLink("Lists".ToUpper(), "Index", "Home", new { href = "javascript:void(0);" })
+                            @Html.ActionLink("Lists".ToUpper(), "Index", "Home", new { href = "javascript:void(0);", @class = "Lists" == controllerName ? "selected" : "" })
                             <ul>
                                 <li>@Html.ActionLink("Procedure\\Payment\\Adjustment Codes", "Index", "Home")</li>
                                 <li>@Html.ActionLink("MultiLink Codes", "Index", "Home")</li>
@@ -127,7 +127,7 @@
                         </li>
                     
                         <li>
-                            @Html.ActionLink("Reports".ToUpper(), "Index", "Home", new { href = "javascript:void(0);" })
+                            @Html.ActionLink("Reports".ToUpper(), "Index", "Home", new { href = "javascript:void(0);", @class = "Reports" == controllerName ? "selected" : "" })
                             <ul>
                                 <li>@Html.ActionLink("Day Sheets", "Index", "Home")
                                     <ul>
@@ -170,8 +170,8 @@
                             </ul>
                         </li>
                     }
-                    <li>@Html.ActionLink("About".ToUpper(), "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact".ToUpper(), "Contact", "Home")</li>
+                    <li>@Html.ActionLink("About".ToUpper(), "About", "Home", new { @class = "About" == controllerName ? "selected" : "" })</li>
+                    <li>@Html.ActionLink("Contact".ToUpper(), "Contact", "Home", new { @class = "Contact" == controllerName ? "selected" : "" })</li>
                 </ul>
             </div>
                     }
