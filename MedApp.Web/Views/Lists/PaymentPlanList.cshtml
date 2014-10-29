@@ -33,8 +33,8 @@
             row_primary_key: "customer_id",
 
             columns: [
-                { field: "customer_id", header: "Code", visible: "no" },
-                { field: "lastname", header: "Lastname" },
+                { field: "Code", header: "Code", visible: "no" },
+                { field: "FirstPaymentDue", header: "First Payment Due" },
                 { field: "firstname", header: "Firstname" },
                 { field: "email", header: "Email", visible: "no", "sortable": "no" },
                 { field: "gender", header: "Gender" },
@@ -42,8 +42,8 @@
             ],
 
             sorting: [
-                { sortingName: "Code", field: "customer_id", order: "none" },
-                { sortingName: "Lastname", field: "lastname", order: "ascending" },
+                { sortingName: "Code", field: "Code", order: "none" },
+                { sortingName: "First Payment Due", field: "FirstPaymentDue", order: "ascending" },
                 { sortingName: "Firstname", field: "firstname", order: "ascending" },
                 { sortingName: "Date updated", field: "date_updated", order: "none" }
             ],
@@ -51,7 +51,7 @@
             filterOptions: {
                 filters: [
                     {
-                        filterName: "Lastname", "filterType": "text", field: "lastname", filterLabel: "Last name",
+                        filterName: "First Payment Due", filterType : "text", field: "FirstPaymentDue", filterLabel: "Last name",
                         excluded_operators: ["in", "not_in"],
                         filter_interface: [
                             {

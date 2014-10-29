@@ -24,7 +24,8 @@ namespace MedApp.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/Bootstrap/bootstrap.css",
-                      "~/Content/Styles/site.css"));
+                      "~/Content/Styles/site.css",
+                      "~/Content/Styles/fonts.css"));
 
             bundles.Add(new StyleBundle("~/Content/smartmenu").Include(
                       "~/Content/JqMenu/sm-core-css.css",

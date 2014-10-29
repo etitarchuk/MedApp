@@ -47,8 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Lists\PaymentPlanManager.cs" />
+    <Compile Include="Manager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserManager.cs" />
+    <Compile Include="Lists\UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MedApp.Common\MedApp.Common.csproj">

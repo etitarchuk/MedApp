@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using MedApp.Common.ViewModels.Lists;
 using MedApp.DataLayer;
+using MedApp.DataLayer.Models;
+
 namespace MedApp.Core.Lists
 {
-  public class PaymentPlanManager
+    public class PaymentPlanManager : Manager<PaymentPlan>
     {
-       private DataContext _dataContext;
-
         private static PaymentPlanManager _instance;
         public static PaymentPlanManager Instance
         {
@@ -22,21 +22,17 @@ namespace MedApp.Core.Lists
             }
         }
 
-        protected PaymentPlanManager()
-        {
-            _dataContext = new MedApp.DataLayer.DataContext();
-        }
-
         public IEnumerable<PaymentPlanListViewModel> GetAllPaymentPlans()
         {
-            return _dataContext.PaymentPlans.Select(m => new PaymentPlanListViewModel { 
-                        Id = m.Id,
-                        Code = m.Code,
-                        Description = m.Description,
-                        FirstPaymentDue = m.FirstPaymentDue,
-                        DueEvery = m.DueEvery,
-                        Amount = m.Amount,
-                        DateModified = m.DateModified
+            return DataContext.PaymentPlans.Select(m => new PaymentPlanListViewModel
+            {
+                Id = m.Id,
+                Code = m.Code,
+                Description = m.Description,
+                FirstPaymentDue = m.FirstPaymentDue,
+                DueEvery = m.DueEvery,
+                Amount = m.Amount,
+                DateModified = m.DateModified
             });
         }
     }

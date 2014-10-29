@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="DataContext.cs" />
     <Compile Include="Emuns.cs" />
+    <Compile Include="Model.cs" />
     <Compile Include="Models\BillingCode.cs" />
     <Compile Include="Models\Case.cs" />
     <Compile Include="Models\StudentStatus.cs" />
