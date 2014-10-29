@@ -7,7 +7,7 @@ using MedApp.Common.ViewModels.Lists;
 using MedApp.DataLayer;
 namespace MedApp.Core.Lists
 {
-  public   class PaymentPlanManager
+  public class PaymentPlanManager
     {
        private DataContext _dataContext;
 
@@ -39,7 +39,5 @@ namespace MedApp.Core.Lists
                         DateModified = m.DateModified
             });
         }
-
-
     }
 }
