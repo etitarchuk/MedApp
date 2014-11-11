@@ -62,15 +62,15 @@ namespace MedApp.Common.ViewModels.Lists
         private DateTime? dateModified { get; set; }
 
         [DisplayName("Date Modified")]
-        public string DateModifiedString
+        public DateTime DateModifiedString
         {
             get
             {
-                return dateModified.Value.ToShortDateString();
+                return dateModified.Value;//.ToShortDateString();
             }
             set
             {
-                dateModified = DateTime.Parse(value);
+                dateModified = value;//DateTime.Parse(value);
             }
         }
 

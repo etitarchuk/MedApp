@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 20px;
     background-color:#F8F8F8;
 }
@@ -23,11 +23,11 @@ textarea {
 
 .mainLogo {
     /*margin-top:20px;*/
-    margin-left:20px;
+    
 }
 
 #headerTop {
-    height:130px;
+    /*height:130px;*/
 }
 
 #headerMenu {
@@ -35,14 +35,10 @@ textarea {
 }
 
 .container {
-    padding:30px;
+    padding-top:20px;
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:20px;
     background-color:white;
 }
 
-.selected
-{
-    background-color:#00936E;
-    color:white !important;
-    font-weight:bold;
-    border-right-color:#00936E;
-}

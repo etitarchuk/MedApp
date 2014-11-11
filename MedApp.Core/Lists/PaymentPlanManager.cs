@@ -32,7 +32,7 @@ namespace MedApp.Core.Lists
                 FirstPaymentDue = m.FirstPaymentDue,
                 DueEvery = m.DueEvery,
                 Amount = m.Amount,
-                DateModifiedString = m.DateModified.ToString()
+                DateModifiedString = m.DateModified.HasValue ? m.DateModified.Value : DateTime.MinValue//.ToString()
             });
         }
     }

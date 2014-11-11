@@ -22,7 +22,7 @@ namespace MedApp.Web.Controllers
         {
             return View(new MedApp.Common.ViewModels.Lists.PaymentPlanListViewModel());
         }
-        [Bind(Exclude = "DateModified")]
+
         [HttpPost]
         public ActionResult GridInit( int page_num)
         {
@@ -32,6 +32,7 @@ namespace MedApp.Web.Controllers
                 Grid.DataSource = PaymentPlanManager.Instance.GetAllPaymentPlans();
             }
 
+            System.Threading.Thread.Sleep(1000);
             //Grid.Apply(HttpContext.Request.Params);
 
             return Json(Grid.GetData(), JsonRequestBehavior.AllowGet);

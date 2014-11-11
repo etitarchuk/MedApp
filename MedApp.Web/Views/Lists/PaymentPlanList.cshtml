@@ -23,231 +23,247 @@
 @using MedApp.Web.Helpers
 <h2>PaymentPlanList</h2>
 
-<div id="demo_grid1"><img src="http://sierrafire.cr.usgs.gov/images/loading.gif" alt="loading"></div>
+<section>
+    <div id="PaymentPlanContainer">
 
-@*@Html.BsGrid("GridInit", "Lists", Model.GetType())*@
+        <img id="loading" src="http://sierrafire.cr.usgs.gov/images/loading.gif" height="100" alt="loading" />
+        <div id="demo_grid1" style="display:none"></div>
 
-<script type='text/javascript'>
-    $(function () {
+    @*@Html.BsGrid("GridInit", "Lists", Model.GetType())*@
 
-        $('#demo_grid1').bs_grid({
 
-            ajaxFetchDataURL: '/Lists/GridInit',
-            row_primary_key: 'Id',
-            columns: [
-                { field: 'Id', header: 'Id', visible: 'no' }, { field: 'Code', header: 'Code' }, { field: 'Description', header: 'Description' }, { field: 'FirstPaymentDue', header: '1st Payment Due on' }, { field: 'DueEvery', header: 'Interval in Days' }, { field: 'Amount', header: 'Amount Due' }, { field: 'DateModifiedString', header: 'Date Modified' }],
 
-            sorting: [{ sortingName: 'Id', field: 'Id', order: 'none' }, { sortingName: 'Code', field: 'Code', order: 'ascending' }, { sortingName: 'Description', field: 'Description', order: 'ascending' }, { sortingName: '1st Payment Due on', field: 'FirstPaymentDue', order: 'ascending' }, { sortingName: 'Interval in Days', field: 'DueEvery', order: 'ascending' }, { sortingName: 'Amount Due', field: 'Amount', order: 'ascending' }, { sortingName: 'Date Modified', field: 'DateModifiedString', order: 'ascending' }],
-            pageNum: 1,
-            rowsPerPage: 10,
-            maxRowsPerPage: 100,
-            useFilters: false,
-            showRowNumbers: false,
-            showSortingIndicator: false,
-            useSortableLists: false,
-            filterOptions: {
-                filters: [
-//                    {
-//                        filterName: 'First Payment Due', filterType : 'text', field: 'FirstPaymentDue', filterLabel: 'Last name',
-//                        excluded_operators: ['in', 'not_in'],
-//                        filter_interface: [
-//                            {
-//                                filter_element: 'input',
-//                                filter_element_attributes: { 'type': 'text' }
-//                            }
-//                        ]
-//                    },
-//                    {
-//                        filterName: 'Gender', 'filterType': 'number', 'numberType': 'integer', field: 'lk_genders_id', filterLabel: 'Gender',
-//                        excluded_operators: ['equal', 'not_equal', 'less', 'less_or_equal', 'greater', 'greater_or_equal'],
-//                        filter_interface: [
-//                            {
-//                                filter_element: 'input',
-//                                filter_element_attributes: { type: 'checkbox' }
-//                            }
-//                        ],
-//                        lookup_values: [
-//                            { lk_option: 'Male', lk_value: '1' },
-//                            { lk_option: 'Female', lk_value: '2', lk_selected: 'yes' }
-//                        ]
-//                    },
-//                    {
-//                        filterName: 'DateUpdated', 'filterType': 'date', field: 'date_updated', filterLabel: 'Datetime updated',
-//                        excluded_operators: ['in', 'not_in'],
-//                        filter_interface: [
-//                            {
-//                                filter_element: 'input',
-//                                filter_element_attributes: {
-//                                    type: 'text',
-//                                    title: 'Set the date and time using format: dd/mm/yyyy hh:mm:ss'
-//                                },
-//                                filter_widget: 'datetimepicker',
-//                                filter_widget_properties: {
-//                                    dateFormat: 'dd/mm/yy',
-//                                    timeFormat: 'HH:mm:ss',
-//                                    changeMonth: true,
-//                                    changeYear: true,
-//                                    showSecond: true
-//                                }
-//                            }
-//                        ],
-//                        validate_dateformat: ['DD/MM/YYYY HH:mm:ss'],
-//                        filter_value_conversion: {
-//                            function_name: 'local_datetime_to_UTC_timestamp',
-//                            args: [
-//                                { 'filter_value': 'yes' },
-//                                { 'value': 'DD/MM/YYYY HH:mm:ss' }
-//                            ]
-//                        }
-//                    }
-                ]
+    <script type='text/javascript'>
+        $("#demo_grid1").bs_grid({
+            onDisplay: function () {
+                document.getElementById("loading").style.display = "none";
+                document.getElementById("demo_grid1").style.display = "block";
+                
             }
+        });
+        $(function () {
+
+            $('#demo_grid1').bs_grid({
+
+                ajaxFetchDataURL: '/Lists/GridInit',
+                row_primary_key: 'Id',
+                columns: [
+                    { field: 'Id', header: 'Id', visible: 'no' }, { field: 'Code', header: 'Code' }, { field: 'Description', header: 'Description' }, { field: 'FirstPaymentDue', header: '1st Payment Due on' }, { field: 'DueEvery', header: 'Interval in Days' }, { field: 'Amount', header: 'Amount Due' }, { field: 'DateModifiedString', header: 'Date Modified' }],
+
+                sorting: [{ sortingName: 'Id', field: 'Id', order: 'none' }, { sortingName: 'Code', field: 'Code', order: 'ascending' }, { sortingName: 'Description', field: 'Description', order: 'ascending' }, { sortingName: '1st Payment Due on', field: 'FirstPaymentDue', order: 'ascending' }, { sortingName: 'Interval in Days', field: 'DueEvery', order: 'ascending' }, { sortingName: 'Amount Due', field: 'Amount', order: 'ascending' }, { sortingName: 'Date Modified', field: 'DateModifiedString', order: 'ascending' }],
+                pageNum: 1,
+                rowsPerPage: 10,
+                maxRowsPerPage: 100,
+                useFilters: false,
+                showRowNumbers: false,
+                showSortingIndicator: false,
+                useSortableLists: false,
+                filterOptions: {
+                    filters: [
+    //                    {
+    //                        filterName: 'First Payment Due', filterType : 'text', field: 'FirstPaymentDue', filterLabel: 'Last name',
+    //                        excluded_operators: ['in', 'not_in'],
+    //                        filter_interface: [
+    //                            {
+    //                                filter_element: 'input',
+    //                                filter_element_attributes: { 'type': 'text' }
+    //                            }
+    //                        ]
+    //                    },
+    //                    {
+    //                        filterName: 'Gender', 'filterType': 'number', 'numberType': 'integer', field: 'lk_genders_id', filterLabel: 'Gender',
+    //                        excluded_operators: ['equal', 'not_equal', 'less', 'less_or_equal', 'greater', 'greater_or_equal'],
+    //                        filter_interface: [
+    //                            {
+    //                                filter_element: 'input',
+    //                                filter_element_attributes: { type: 'checkbox' }
+    //                            }
+    //                        ],
+    //                        lookup_values: [
+    //                            { lk_option: 'Male', lk_value: '1' },
+    //                            { lk_option: 'Female', lk_value: '2', lk_selected: 'yes' }
+    //                        ]
+    //                    },
+    //                    {
+    //                        filterName: 'DateUpdated', 'filterType': 'date', field: 'date_updated', filterLabel: 'Datetime updated',
+    //                        excluded_operators: ['in', 'not_in'],
+    //                        filter_interface: [
+    //                            {
+    //                                filter_element: 'input',
+    //                                filter_element_attributes: {
+    //                                    type: 'text',
+    //                                    title: 'Set the date and time using format: dd/mm/yyyy hh:mm:ss'
+    //                                },
+    //                                filter_widget: 'datetimepicker',
+    //                                filter_widget_properties: {
+    //                                    dateFormat: 'dd/mm/yy',
+    //                                    timeFormat: 'HH:mm:ss',
+    //                                    changeMonth: true,
+    //                                    changeYear: true,
+    //                                    showSecond: true
+    //                                }
+    //                            }
+    //                        ],
+    //                        validate_dateformat: ['DD/MM/YYYY HH:mm:ss'],
+    //                        filter_value_conversion: {
+    //                            function_name: 'local_datetime_to_UTC_timestamp',
+    //                            args: [
+    //                                { 'filter_value': 'yes' },
+    //                                { 'value': 'DD/MM/YYYY HH:mm:ss' }
+    //                            ]
+    //                        }
+    //                    }
+                    ]
+                }
+
+            });
 
         });
 
-    });
-
-</script>
+    </script>
 
 
 
-@*<table id="grid"></table>*@
+    @*<table id="grid"></table>*@
 
-@*<table id="jqGrid"></table>*@
-@*<div id="jqGridPager"></div>*@
-
-
-
-@*<script type="text/javascript">
-    //var data = [[48803, "DSK1", "", "02200220", "OPEN"], [48769, "APPR", "", "77733337", "ENTERED"]];
-
-    //$("#grid").jqGrid({
-    //    datatype: "local",
-    //    height: 250,
-    //    colNames: ['Inv No', 'Thingy', 'Blank', 'Number', 'Status'],
-    //    colModel: [{
-    //        name: 'id',
-    //        index: 'id',
-    //        width: 60,
-    //        sorttype: "int"
-    //    },
-    //    {
-    //        name: 'thingy',
-    //        index: 'thingy',
-    //        width: 90,
-    //        sorttype: "date"
-    //    },
-    //    {
-    //        name: 'blank',
-    //        index: 'blank',
-    //        width: 30
-    //    },
-    //    {
-    //        name: 'number',
-    //        index: 'number',
-    //        width: 80,
-    //        sorttype: "float"
-    //    },
-    //    {
-    //        name: 'status',
-    //        index: 'status',
-    //        width: 80,
-    //        sorttype: "float"
-    //    }
-    //    ],
-    //    caption: "Stack Overflow Example",
-    //    // ondblClickRow: function(rowid,iRow,iCol,e){alert('double clicked');}
-    //});
-
-    //var names = ["id", "thingy", "blank", "number", "status"];
-    //var mydata = [];
-
-    //for (var i = 0; i < data.length; i++) {
-    //    mydata[i] = {};
-    //    for (var j = 0; j < data[i].length; j++) {
-    //        mydata[i][names[j]] = data[i][j];
-    //    }
-    //}
-
-    //for (var i = 0; i <= mydata.length; i++) {
-    //    $("#grid").jqGrid('addRowData', i + 1, mydata[i]);
-    //}
-
-    /*
-    $("#grid").jqGrid('setGridParam', {onSelectRow: function(rowid,iRow,iCol,e){alert('row clicked');}});
-    */
-    @*$("#grid").jqGrid('setGridParam', { ondblClickRow: function (rowid, iRow, iCol, e) { alert('double clicked'); } });
+    @*<table id="jqGrid"></table>*@
+    @*<div id="jqGridPager"></div>*@
 
 
-            $(document).ready(function () {
-                $("#grid").jqGrid({
-                    url: '/Lists/GridInit',
-                    mtype: "POST",
-                    datatype: "json",
-                    page: 1,
-                    colNames: ['Code', 'Description', '1st Payment Due on', 'Interval in Days', 'Amount Due', 'Date Modified'],
-                    colModel: [
-                        { name: 'Code', key: true, width: 30 },
-                        { name: 'Description', width: 100 },
-                        { name: 'OrderDate', width: 150 }                       
-                    ],
-                   
-                    height: 250,
-                    rowNum: 20,
-                    pager: "#jqGridPager",                   
-                    sortname: 'id', //the column according to which data is to be sorted; optional
-                    viewrecords: true, //if true, displays the total number of records, etc. as: "View X to Y out of Z” optional
-                    sortorder: "asc", //sort order; optional
-                    pageinput: true,
-                    autowidth: true
-                    
 
-                })
-            });
+    @*<script type="text/javascript">
+        //var data = [[48803, "DSK1", "", "02200220", "OPEN"], [48769, "APPR", "", "77733337", "ENTERED"]];
 
-    </script>*@
+        //$("#grid").jqGrid({
+        //    datatype: "local",
+        //    height: 250,
+        //    colNames: ['Inv No', 'Thingy', 'Blank', 'Number', 'Status'],
+        //    colModel: [{
+        //        name: 'id',
+        //        index: 'id',
+        //        width: 60,
+        //        sorttype: "int"
+        //    },
+        //    {
+        //        name: 'thingy',
+        //        index: 'thingy',
+        //        width: 90,
+        //        sorttype: "date"
+        //    },
+        //    {
+        //        name: 'blank',
+        //        index: 'blank',
+        //        width: 30
+        //    },
+        //    {
+        //        name: 'number',
+        //        index: 'number',
+        //        width: 80,
+        //        sorttype: "float"
+        //    },
+        //    {
+        //        name: 'status',
+        //        index: 'status',
+        //        width: 80,
+        //        sorttype: "float"
+        //    }
+        //    ],
+        //    caption: "Stack Overflow Example",
+        //    // ondblClickRow: function(rowid,iRow,iCol,e){alert('double clicked');}
+        //});
 
-<script>
-    /**
- * Convert local timezone date string to UTC timestamp
- *
- * Alternative syntax using jquery (instead of moment.js):
- *     var date = $.datepicker.parseDateTime(dateformat, timeformat, date_str);
- *
+        //var names = ["id", "thingy", "blank", "number", "status"];
+        //var mydata = [];
 
- */
-    function local_datetime_to_UTC_timestamp(date_str, dateformat) {
+        //for (var i = 0; i < data.length; i++) {
+        //    mydata[i] = {};
+        //    for (var j = 0; j < data[i].length; j++) {
+        //        mydata[i][names[j]] = data[i][j];
+        //    }
+        //}
 
-        // avoid date overflow in user input (moment("14/14/2005", "DD/MM/YYYY") => Tue Feb 14 2006)
-        if (moment(date_str, dateformat).isValid() == false) {
-            throw new Error("Invalid date");
-        }
+        //for (var i = 0; i <= mydata.length; i++) {
+        //    $("#grid").jqGrid('addRowData', i + 1, mydata[i]);
+        //}
 
-        // parse date string using given dateformat and create a javascript date object
-        var date = moment(date_str, dateformat).toDate();
+        /*
+        $("#grid").jqGrid('setGridParam', {onSelectRow: function(rowid,iRow,iCol,e){alert('row clicked');}});
+        */
+        @*$("#grid").jqGrid('setGridParam', { ondblClickRow: function (rowid, iRow, iCol, e) { alert('double clicked'); } });
 
-        // use javascript getUTC* functions to conv ert to UTC
-        return date.getUTCFullYear() +
-            PadDigits(date.getUTCMonth() + 1, 2) +
-            PadDigits(date.getUTCDate(), 2) +
-            PadDigits(date.getUTCHours(), 2) +
-            PadDigits(date.getUTCMinutes(), 2) +
-            PadDigits(date.getUTCSeconds(), 2);
 
-    }
+                $(document).ready(function () {
+                    $("#grid").jqGrid({
+                        url: '/Lists/GridInit',
+                        mtype: "POST",
+                        datatype: "json",
+                        page: 1,
+                        colNames: ['Code', 'Description', '1st Payment Due on', 'Interval in Days', 'Amount Due', 'Date Modified'],
+                        colModel: [
+                            { name: 'Code', key: true, width: 30 },
+                            { name: 'Description', width: 100 },
+                            { name: 'OrderDate', width: 150 }
+                        ],
 
-    /**
-     * Add leading zeros
-  
+                        height: 250,
+                        rowNum: 20,
+                        pager: "#jqGridPager",
+                        sortname: 'id', //the column according to which data is to be sorted; optional
+                        viewrecords: true, //if true, displays the total number of records, etc. as: "View X to Y out of Z” optional
+                        sortorder: "asc", //sort order; optional
+                        pageinput: true,
+                        autowidth: true
+
+
+                    })
+                });
+
+        </script>*@
+
+    <script>
+        /**
+     * Convert local timezone date string to UTC timestamp
+     *
+     * Alternative syntax using jquery (instead of moment.js):
+     *     var date = $.datepicker.parseDateTime(dateformat, timeformat, date_str);
+     *
+
      */
-    function PadDigits(n, totalDigits) {
-        n = n.toString();
-        var pd = '';
-        if (totalDigits > n.length) {
-            for (i = 0; i < (totalDigits - n.length) ; i++) {
-                pd += '0';
+        function local_datetime_to_UTC_timestamp(date_str, dateformat) {
+
+            // avoid date overflow in user input (moment("14/14/2005", "DD/MM/YYYY") => Tue Feb 14 2006)
+            if (moment(date_str, dateformat).isValid() == false) {
+                throw new Error("Invalid date");
             }
+
+            // parse date string using given dateformat and create a javascript date object
+            var date = moment(date_str, dateformat).toDate();
+
+            // use javascript getUTC* functions to conv ert to UTC
+            return date.getUTCFullYear() +
+                PadDigits(date.getUTCMonth() + 1, 2) +
+                PadDigits(date.getUTCDate(), 2) +
+                PadDigits(date.getUTCHours(), 2) +
+                PadDigits(date.getUTCMinutes(), 2) +
+                PadDigits(date.getUTCSeconds(), 2);
+
         }
-        return pd + n.toString();
-    }
-</script>
+
+        /**
+         * Add leading zeros
+
+         */
+        function PadDigits(n, totalDigits) {
+            n = n.toString();
+            var pd = '';
+            if (totalDigits > n.length) {
+                for (i = 0; i < (totalDigits - n.length) ; i++) {
+                    pd += '0';
+                }
+            }
+            return pd + n.toString();
+        }
+    </script>
+
+    </div>
+</section>
