@@ -18,6 +18,7 @@
         border-width:1px;
         border-color:#ddd;
         border-style:solid;
+        /*border-left-width:0px;*/
         /*border-width:1px;
         border-color:#dddddd;*/
 		/*background-image:url(css-gradients-fallback/main-menu-bg.png);
@@ -200,30 +201,62 @@
 /* Items separators
 ===================*/
 
-	.sm-blue li {		
-        border-width:0px 1px 0px 0px;
+    .sm-blue ul {
+        border:1px solid #ddd;
+
+        border-bottom:none;
+        border-top:none;
+    }
+
+    /*.sm-blue a {
+        border-right:1px solid #ddd;
+    }
+
+    .sm-blue ul li a {
+        border-right:0px;
+    }*/
+
+	.sm-blue li {  
+      	
+        /*border-right:1px solid #ddd;*/
+        	
+        /*border-width:0px 1px 0px 0px;
         border-style:solid;
-        border-color:#ddd;
+        border-color:#ddd;*/
+	}
+    .sm-blue li:hover {  
+      	
+        /*border-left:1px solid #2BD9BF;*/
+        	
+        /*border-width:0px 1px 0px 0px;
+        border-style:solid;
+        border-color:#ddd;*/
 	}
 
-    .sm-blue ul li:first-child a {
+
+    .sm-blue ul li:first-child>a {
         border-top-color:#ddd;
-        /*background-color:aqua;*/
+
     }
-    .sm-blue ul li:last-child a {
+    .sm-blue ul li:last-child>a {
         border-bottom-color:#ddd;
-        /*background-color:aqua;*/
+    }
+
+    .sm-blue ul li:first-child a ul a {
+        border-top-color:#fff;
+
+    }
+    .sm-blue ul li:last-child a ul a{
+        border-bottom-color:#fff;
     }
 
 	.sm-blue li:first-child,
 	.sm-blue-vertical li,
 	.sm-blue ul li {
-		border-left:1px;
-        border-left-style:solid;
-        border-left-color:#ddd;
+
 	}
 
-    .sm-blue li:hover
+    /*.sm-blue li:hover
     {
         border-right-color:#2BD9BF;
     }
@@ -244,7 +277,7 @@
 
     .sm-blue ul li:hover a {
 		padding-left:21px;
-	}
+	}*/
 
 
 

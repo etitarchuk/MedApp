@@ -1114,14 +1114,14 @@
 							// don't forget to call complete() at the end of whatever you do
 							// e.g.: function($ul, complete) { $ul.fadeIn(250, complete); }
 		hideDuration:		0,		// duration for hide animation - set to 0 for no animation - matters only if hideFunction:null
-		hideFunction:		function($ul, complete) { $ul.fadeOut(20, complete); },	// custom function to use when hiding a sub menu (the default is the jQuery 'hide')
+		hideFunction:		function($ul, complete) { $ul.fadeOut(0, complete); },	// custom function to use when hiding a sub menu (the default is the jQuery 'hide')
 							// don't forget to call complete() at the end of whatever you do
 							// e.g.: function($ul, complete) { $ul.fadeOut(250, complete); }
 		collapsibleShowDuration:0,		// duration for show animation for collapsible sub menus - matters only if collapsibleShowFunction:null
-		collapsibleShowFunction:function($ul, complete) { $ul.slideDown(20, complete); },	// custom function to use when showing a collapsible sub menu
+		collapsibleShowFunction:function($ul, complete) { $ul.slideDown(10, complete); },	// custom function to use when showing a collapsible sub menu
 							// (i.e. when mobile styles are used to make the sub menus collapsible)
 		collapsibleHideDuration:0,		// duration for hide animation for collapsible sub menus - matters only if collapsibleHideFunction:null
-		collapsibleHideFunction:function($ul, complete) { $ul.slideUp(20, complete); },	// custom function to use when hiding a collapsible sub menu
+		collapsibleHideFunction:function($ul, complete) { $ul.slideUp(0, complete); },	// custom function to use when hiding a collapsible sub menu
 							// (i.e. when mobile styles are used to make the sub menus collapsible)
 		showOnClick:		false,		// show the first-level sub menus onclick instead of onmouseover (matters only for mouse input)
 		hideOnClick:		true,		// hide the sub menus on click/tap anywhere on the page

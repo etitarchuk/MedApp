@@ -246,7 +246,6 @@
     <Content Include="Content\JqueryUI\jquery-ui.min.js" />
     <Content Include="Content\JqGrid\jquery.jqGrid.min.js" />
     <Content Include="Content\JqMenu\jquery.smartmenus.js" />
-    <Content Include="Content\JqMenu\jquery.smartmenus.min.js" />
     <Content Include="Content\Scripts\jquery.validate.js" />
     <Content Include="Content\Scripts\jquery.validate.min.js" />
     <Content Include="Content\Scripts\jquery.validate.unobtrusive.js" />
