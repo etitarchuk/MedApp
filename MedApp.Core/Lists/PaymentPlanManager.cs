@@ -32,7 +32,7 @@ namespace MedApp.Core.Lists
                 FirstPaymentDue = m.FirstPaymentDue,
                 DueEvery = m.DueEvery,
                 Amount = m.Amount,
-                DateModified = m.DateModified
+                DateModifiedString = m.DateModified.ToString()
             });
         }
     }

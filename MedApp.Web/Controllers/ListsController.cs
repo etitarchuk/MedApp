@@ -20,9 +20,9 @@ namespace MedApp.Web.Controllers
 
         public ActionResult PaymentPlanList()
         {
-            return View();
+            return View(new MedApp.Common.ViewModels.Lists.PaymentPlanListViewModel());
         }
-
+        [Bind(Exclude = "DateModified")]
         [HttpPost]
         public ActionResult GridInit( int page_num)
         {

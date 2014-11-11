@@ -36,14 +36,14 @@ namespace MedApp.Common.ViewModels.Lists
 
         public DateTime? DateCreated { get; set; }
 
-       
+
     }
 
     public class PaymentPlanListViewModel
     {
 
         public int Id { get; set; }
-        
+
         public string Code { get; set; }
         public string Description { get; set; }
 
@@ -56,8 +56,24 @@ namespace MedApp.Common.ViewModels.Lists
         [DisplayName("Amount Due")]
         public decimal Amount { get; set; }
 
-        public DateTime? DateModified { get; set; }
-     
+
+        [DisplayFormat(DataFormatString = "{0:d}")]
+        [DisplayName("Date Modified")]
+        private DateTime? dateModified { get; set; }
+
+        [DisplayName("Date Modified")]
+        public string DateModifiedString
+        {
+            get
+            {
+                return dateModified.Value.ToShortDateString();
+            }
+            set
+            {
+                dateModified = DateTime.Parse(value);
+            }
+        }
+
     }
 
 
